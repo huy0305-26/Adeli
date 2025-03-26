@@ -972,7 +972,7 @@
           <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
 
           <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-            <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+            <form id="booking-form" role="form" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Họ và Tên" required="">
@@ -1000,11 +1000,31 @@
 
               <div class="text-center mt-3">
                 <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                <div class="sent-message">Yêu cầu đặt chỗ của bạn đã được gửi. Chúng tôi sẽ gọi lại hoặc gửi Email để xác nhận đặt chỗ của bạn. Cảm ơn bạn!</div>
                 <button type="submit">Đặt Bàn Ngay</button>
               </div>
             </form>
+
+            <script>
+              document.getElementById("booking-form").addEventListener("submit", function (event) {
+                event.preventDefault(); // Ngăn gửi form
+    
+                let loading = document.querySelector(".loading");
+                let sentMessage = document.querySelector(".sent-message");
+    
+                if (!loading || !sentMessage) {
+                  console.error("Không tìm thấy phần tử .loading hoặc .sent-message");
+                  return;
+                }
+    
+                loading.style.display = "block"; // Hiển thị loading
+    
+                setTimeout(function () {
+                  loading.style.display = "none"; // Ẩn loading
+                  sentMessage.style.display = "block"; // Hiển thị thông báo thành công
+                }, 1500);
+              });
+            </script>
           </div><!-- End Reservation Form -->
 
         </div>
