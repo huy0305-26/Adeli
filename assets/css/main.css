@@ -5,7 +5,33 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+.header .languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--accent-color);
+}
 
+.header .languages ul a {
+  color: var(--default-color);
+}
+
+.header .languages ul a:hover {
+  color: var(--accent-color);
+}
+
+.header .languages ul li+li {
+  padding-left: 10px;
+}
+
+.header .languages ul li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  content: "/";
+}
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
