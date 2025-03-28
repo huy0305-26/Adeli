@@ -36,6 +36,10 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+.hero-web {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
 .menu-img {
   border-radius: 50%;
   width: 600px; /* Điều chỉnh kích thước */
@@ -1312,7 +1316,7 @@ section,
 .events .event-item {
   background-size: cover;
   background-position: cente;
-  min-height: 600px;
+  min-height: 650px;
   padding: 30px;
 }
 
@@ -1334,6 +1338,13 @@ section,
   font-weight: 700;
   margin-bottom: 5px;
   color: #ffffff;
+  position: relative;
+}
+.events .event-item h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: whitesmoke;
   position: relative;
 }
 
